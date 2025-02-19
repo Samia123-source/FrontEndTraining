@@ -77,6 +77,65 @@
       background-color: darkred;
     }
 
+    .carousel {
+      position: relative;
+      width: 80%;
+      margin: 40px auto;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .carousel img {
+      width: 100%;
+      display: block;
+    }
+
+    .carousel-content {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 300px;
+    }
+
+    .carousel-content h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .carousel-content p {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .carousel-controls {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+
+    .carousel-controls button {
+      background: rgba(0, 0, 0, 0.5);
+      border: none;
+      color: white;
+      font-size: 20px;
+      padding: 20px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    .carousel-controls button:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+
     .hockey-club {
       text-align: center;
       padding: 50px;
@@ -95,46 +154,94 @@
     .progress-container {
       display: flex;
       justify-content: center;
-      gap: 40px;
-      padding: 50px;
+      gap: 50px;
+      margin-top: 30px;
     }
-
-    .progress-box {
-      text-align: center;
+    
+    .progress-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
     .progress-circle {
-      width: 80px;
-      height: 80px;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
-      border: 8px solid lightgray;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 18px;
       font-weight: bold;
+      font-size: 20px;
       position: relative;
     }
 
-    .progress-circle::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      clip: rect(0, 80px, 80px, 40px);
+    .progress-red { border: 10px solid red; }
+    .progress-green { border: 10px solid green; }
+    .progress-orange { border: 10px solid orange; }
+    .progress-blue { border: 10px solid blue; }
+
+    .progress-item h3 {
+      margin-top: 10px;
+      font-size: 18px;
     }
 
-    .red::after { border: 8px solid red; }
-    .green::after { border: 8px solid green; }
-    .orange::after { border: 8px solid orange; }
-    .blue::after { border: 8px solid blue; }
+    .progress-item p {
+      color: #666;
+      font-size: 14px;
+    }
+    .program-sections {
+      width: 80%;
+      margin: 40px auto;
+    }
 
+    .program-card {
+      position: relative;
+      border-radius: 15px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .program-card img {
+      width: 100%;
+      display: block;
+    }
+
+    .program-content {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 90%;
+    }
+
+    .program-content h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .register-button {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .register-button:hover {
+      background-color: darkred;
+    }
   </style>
 </head>
 <body>
+
   <nav class="navbar">
     <div class="logo">Hockey<span class="apostrophe">'s</span></div>
     <ul class="nav-links">
@@ -149,59 +256,73 @@
       <button class="ticket-button">Get Ticket</button>
     </div>
   </nav>
-
-  <section class="hockey-club">
+  <div class="carousel">
+    <!-- this image tag add's image from the internet  -->
+    <img id="carouselImage" src="https://static8.depositphotos.com/1012223/980/i/450/depositphotos_9803930-stock-photo-demo-cubes.jpg" alt="Trophy Image">
+    <!-- this adds the image from the pc . here i saved the image on the root location  .where this code file is saved . that's why i needed to add the image name only to perse it properly and directly  -->
+    
+    <div class="carousel-content">
+        <h2>Meet all the heroes from the field</h2>
+        <p>Dit amet consectetur. Condimentum dignissim adipiscing aliquam turpis placerat dolor. Purus urna in sit nullam proin.</p>
+      </div>
+      <div class="carousel-controls">
+        <button>&#9664;</button>
+        <button>&#9654;</button>
+      </div>
+    </div>
+  
+    <section class="hockey-club">
     <h2>Professional Hockeys Club</h2>
     <p>Dit amet consectetur. Condimentum dignissim adipiscing aliquam turpis placerat dolor. Purus urna in sit nullam proin.</p>
     <div class="progress-container">
-      <div class="progress-box">
-        <div class="progress-circle red">87%</div>
-        <p>Prayer Facility</p>
+      <div class="progress-item">
+        <div class="progress-circle progress-red">87%</div>
+        <h3>Prayer Facility</h3>
+        <p>Amet consectetur. Condimentum dignissim adipiscing.</p>
       </div>
-      <div class="progress-box">
-        <div class="progress-circle green">95%</div>
-        <p>Experienced Coach</p>
+      <div class="progress-item">
+        <div class="progress-circle progress-green">95%</div>
+        <h3>Experienced Coach</h3>
+        <p>Amet consectetur. Condimentum dignissim adipiscing.</p>
       </div>
-      <div class="progress-box">
-        <div class="progress-circle orange">90%</div>
-        <p>Senior Player</p>
+      <div class="progress-item">
+        <div class="progress-circle progress-orange">90%</div>
+        <h3>Senior Player</h3>
+        <p>Amet consectetur. Condimentum dignissim adipiscing.</p>
       </div>
-      <div class="progress-box">
-        <div class="progress-circle blue">80%</div>
-        <p>Training Ground</p>
+      <div class="progress-item">
+        <div class="progress-circle progress-blue">80%</div>
+        <h3>Training Ground</h3>
+        <p>Amet consectetur. Condimentum dignissim adipiscing.</p>
       </div>
+      <div class="program-sections">
+        <div class="program-card">
+          <img src="jp.JPG" alt="Junior Program">
+          <div class="program-content">
+            <h3>Junior Program</h3>
+            <p>Dolor sit amet consectetur. Ur urna diam quis sagittis...</p>
+            <button class="register-button">Register Now!</button>
+          </div>
+        </div>
+        <div class="program-card">
+          <img src="tp.JPG" alt="Teenager Program">
+          <div class="program-content">
+            <h3>Teenager Program</h3>
+            <p>Dolor sit amet consectetur. Ur urna diam quis sagittis...</p>
+            <button class="register-button">Register Now!</button>
+          </div>
+        </div>
+        <div class="program-card">
+          <img src="pp.JPG" alt="Professional Program">
+          <div class="program-content">
+            <h3>Professional Program</h3>
+            <p>Dolor sit amet consectetur. Ur urna diam quis sagittis...</p>
+            <button class="register-button">Register Now!</button>
+          </div>
+        </div>
     </div>
   </section>
 
-  <section class="program-sections">
-    <h2>Program Sections</h2>
-    <p>Dit amet consectetur. Condimentum dignissim adipiscing aliquam turpis placerat dolor. Purus urna in sit nullam proin.</p>
-    <div class="program-container">
-      <div class="program-box">
-        <img src="junior.jpg" alt="Junior Program">
-        <div class="program-content">
-          <h3>Junior Program</h3>
-          <p>Dolor sit amet consectetur. Ut urna diam quis sagittis.</p>
-          <a href="#" class="register-btn">Register Now!</a>
-        </div>
-      </div>
-      <div class="program-box">
-        <img src="teenager.jpg" alt="Teenager Program">
-        <div class="program-content">
-          <h3>Teenager Program</h3>
-          <p>Dolor sit amet consectetur. Ut urna diam quis sagittis.</p>
-          <a href="#" class="register-btn">Register Now!</a>
-        </div>
-      </div>
-      <div class="program-box">
-        <img src="professional.jpg" alt="Professional Program">
-        <div class="program-content">
-          <h3>Professional Program</h3>
-          <p>Dolor sit amet consectetur. Ut urna diam quis sagittis.</p>
-          <a href="#" class="register-btn">Register Now!</a>
-        </div>
-      </div>
-    </div>
-  </section>
 </body>
 </html>
+
