@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation Bar</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f9f9f9;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: #ffffff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .logo .apostrophe {
+      color: red;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333333;
+      font-size: 16px;
+    }
+
+    .nav-links a.active {
+      color: red;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .search-icon {
+      font-size: 18px;
+      color: #666666;
+      cursor: pointer;
+    }
+
+    .ticket-button {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .ticket-button:hover {
+      background-color: darkred;
+    }
+
+    .hockey-club {
+      text-align: center;
+      padding: 50px;
+    }
+
+    .hockey-club h2 {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .hockey-club p {
+      margin-top: 10px;
+      color: #666;
+    }
+
+    .progress-container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 50px;
+    }
+
+    .progress-box {
+      text-align: center;
+    }
+
+    .progress-circle {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 8px solid lightgray;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: bold;
+      position: relative;
+    }
+
+    .progress-circle::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      clip: rect(0, 80px, 80px, 40px);
+    }
+
+    .red::after { border: 8px solid red; }
+    .green::after { border: 8px solid green; }
+    .orange::after { border: 8px solid orange; }
+    .blue::after { border: 8px solid blue; }
+
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Hockey<span class="apostrophe">'s</span></div>
+    <ul class="nav-links">
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Pages</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div class="search-icon">&#128269;</div>
+      <button class="ticket-button">Get Ticket</button>
+    </div>
+  </nav>
+
+  <section class="hockey-club">
+    <h2>Professional Hockeys Club</h2>
+    <p>Dit amet consectetur. Condimentum dignissim adipiscing aliquam turpis placerat dolor. Purus urna in sit nullam proin.</p>
+    <div class="progress-container">
+      <div class="progress-box">
+        <div class="progress-circle red">87%</div>
+        <p>Prayer Facility</p>
+      </div>
+      <div class="progress-box">
+        <div class="progress-circle green">95%</div>
+        <p>Experienced Coach</p>
+      </div>
+      <div class="progress-box">
+        <div class="progress-circle orange">90%</div>
+        <p>Senior Player</p>
+      </div>
+      <div class="progress-box">
+        <div class="progress-circle blue">80%</div>
+        <p>Training Ground</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="program-sections">
+    <h2>Program Sections</h2>
+    <p>Dit amet consectetur. Condimentum dignissim adipiscing aliquam turpis placerat dolor. Purus urna in sit nullam proin.</p>
+    <div class="program-container">
+      <div class="program-box">
+        <img src="junior.jpg" alt="Junior Program">
+        <div class="program-content">
+          <h3>Junior Program</h3>
+          <p>Dolor sit amet consectetur. Ut urna diam quis sagittis.</p>
+          <a href="#" class="register-btn">Register Now!</a>
+        </div>
+      </div>
+      <div class="program-box">
+        <img src="teenager.jpg" alt="Teenager Program">
+        <div class="program-content">
+          <h3>Teenager Program</h3>
+          <p>Dolor sit amet consectetur. Ut urna diam quis sagittis.</p>
+          <a href="#" class="register-btn">Register Now!</a>
+        </div>
+      </div>
+      <div class="program-box">
+        <img src="professional.jpg" alt="Professional Program">
+        <div class="program-content">
+          <h3>Professional Program</h3>
+          <p>Dolor sit amet consectetur. Ut urna diam quis sagittis.</p>
+          <a href="#" class="register-btn">Register Now!</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
