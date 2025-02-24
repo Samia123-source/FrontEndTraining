@@ -133,8 +133,7 @@
     }
 
     .carousel-controls button:hover {
-      backg
-      round: rgba(0, 0, 0, 0.8);
+      background: rgba(0, 0, 0, 0.8);
     }
 
     .hockey-club {
@@ -182,7 +181,7 @@
     .progress-green { border: 10px solid green; }
     .progress-orange { border: 10px solid orange; }
     .progress-blue { border: 10px solid blue; }
-     <hr>
+   
 
     .progress-item h3 {
       margin-top: 10px;
@@ -257,25 +256,29 @@
     .container {
         display: flex;
         flex-wrap: wrap;
+        flex-direction:row;
         gap: 20px;
         justify-content: center;
         padding: 20px;
     }
     .card {
         background: white;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        width: 300px;
-        padding: 15px;
+        display: flex;
+        flex-direction:row;
         text-align: center;
     }
   
     .card img {
-        width: 100%;
+        width: 150px;
         border-radius: 10px;
+        margin: 5px;
     }
     .info {
-        padding: 10px 0;
+      display: flex;
+      flex-direction:column;
+      justify-content: start;
+      padding: 10px 0;
+      align-items: start;
     }
     .price {
         color: red;
@@ -391,7 +394,6 @@
             <p>Delivery Fee:Free</p>
         </div>
       </div>
-      <div class="container">
         <div class="card">
           <img src="cap.png" alt="Jacket">
           <div class="info">
