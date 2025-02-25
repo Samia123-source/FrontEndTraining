@@ -265,7 +265,6 @@
         display: flex;
         flex-direction:row;
         text-align: center;
-        font-size: 15px;
     }
   
     .card img {
@@ -284,39 +283,6 @@
         color: red;
         font-weight: bold;
     }
-
-    .faq-container{
-      
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction:row;
-        gap: 20px;
-        justify-content: center;
-        padding: 20px;
-
-    }
-    .faq-image {
-        width: 50;
-        border-radius: 10px;
-        margin: 10px;
-
-      
-    }
-    .info{
-         text-align: left;
-         font-size: ;
-
-    }
-    .links{
-      display: internal;
-      list-style: none;
-      gap: 30px;
-    }
-
-
-    }
-
-
 
    </style>
 </head>
@@ -478,34 +444,7 @@
     </div>
 
   </section>
-   <section class="faq-section">
-        <h2 class="faq-title">Clients Question</h2>
-        <p class="faq-description">Dit amet consectetur. Condimentum dignissim adipiscing aliquam turpis placerat dolor. Purus urna in sit nullam proin.</p>
-   </section>
 
-   <section class="faq-section">
-         <div class="container">
-          <div class="card">
-            <div class="faq-image">
-                <img src="question icon.png" alt="Question Icon">
-            </div>
-            <div class="info">
-              <h3>Our Equipment</h3>
-              <p>Dolor sit amet consectetur. Ut urna diam quis sagittis. Elit elit enim
-                sagittis turpis in magna.</p>
-                <hr>
-                <ul class="links">
-                  <li><a href="#" class="active">Home</a></li>
-                  <li><a href="#">Hockey Training</a></li>
-                  <li><a href="#">Private lessons</a></li>
-                  <li><a href="#">Ski Touring</a></li>
-                  <li><a href="#">Booking</a></li>
-                  <li><a href="#">Pricings</a></li>
-                </ul>
-
-            </div>
-            
-          </section>
   
 
 </body>
