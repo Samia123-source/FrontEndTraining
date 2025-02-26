@@ -361,6 +361,34 @@
   overflow: hidden;
   transition: max-height 0.2s ease-out;
 }
+.contact-container{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction:row;
+        gap: 10px;
+        justify-content: left;
+        padding: 10px;
+
+
+
+}
+
+.contact-card{
+        background: rgba(128, 128, 128, 0.171);
+        display: flex;
+        flex-direction:row;
+        text-align: left;
+        font-size: 20px;
+
+
+}
+
+.phone-image{
+     
+        width: 30;
+        border-radius: 10px;
+        margin: 5px;
+}
 
 
 
@@ -524,9 +552,9 @@
     </div>
 
   </section>
-   <section class="faq-section">
-        <h2 class="faq-title">Clients Question</h2>
-        <p class="faq-description">Dit amet consectetur. Condimentum dignissim adipiscing aliquam turpis placerat dolor. Purus urna in sit nullam proin.</p>
+   <section>
+        <h2>Clients Question</h2>
+        <p>Dit amet consectetur. Condimentum dignissim adipiscing aliquam turpis placerat dolor. Purus urna in sit nullam proin.</p>
    </section>
 
    <section class="faq-section">
@@ -584,6 +612,27 @@
               });
             }
             </script>
+
+            <section>
+              <h2>Get In Touch</h2>
+              <p> Dit amet consectetur. Condimentum dignissim adipiscing aliquam turpis placerat
+                dolor. Purus urna in sit nullam proin.</p>
+            </section>
+
+            <section class="contact">
+              <div class="contact"></div>
+             <div class="contact-container" >
+               <div class="contact-card">
+                <div class="phone-image">
+                  <img src="phone icon.png" alt="Phone Icon">
+              </div>
+              <div class="info">               
+                <P>Phone Number: </P> <br/>
+                 <p>(+62) 123-321-543</P></div>
+               </div>
+             </div>
+
+            </section>
             
 </body>
 </html>
