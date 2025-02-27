@@ -361,34 +361,51 @@
   overflow: hidden;
   transition: max-height 0.2s ease-out;
 }
-.contact-container{
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction:row;
-        gap: 10px;
-        justify-content: left;
-        padding: 10px;
+.contact-container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            gap: 20px;
+        }
+     .contact-info {
+            width: 35%;
+            padding: 20px;
+            background: #f2f2f2;
+            border-radius: 10px;
+        }
+        .contact-info div {
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #fff;
+            border-radius: 5px;
+        }
+        .contact-form {
+            width: 65%;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            background: red;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: darkred;
+        }
 
-
-
-}
-
-.contact-card{
-        background: rgba(128, 128, 128, 0.171);
-        display: flex;
-        flex-direction:row;
-        text-align: left;
-        font-size: 20px;
-
-
-}
-
-.phone-image{
-     
-        width: 30;
-        border-radius: 10px;
-        margin: 5px;
-}
 
 
 
@@ -617,20 +634,34 @@
               <h2>Get In Touch</h2>
               <p> Dit amet consectetur. Condimentum dignissim adipiscing aliquam turpis placerat
                 dolor. Purus urna in sit nullam proin.</p>
-            </section>
-
-            <section class="contact">
-              <div class="contact"></div>
-             <div class="contact-container" >
-               <div class="contact-card">
-                <div class="phone-image">
-                  <img src="phone icon.png" alt="Phone Icon">
+              </section>
+             <div class="contact-container">
+              <div class="contact-info"></div>
+              <div class="card">
+                  <div><strong>Phone Number:</strong> (+62) 123-321-543</div></div>
+                  <div class="card">                
+                  <div><strong>Email:</strong> hockeys@support.com</div></div>
+                  <div class="card">  
+                  <div><strong>Location:</strong> 152/1 Mohakhali Wireless Gate</div>
               </div>
-              <div class="info">               
-                <P>Phone Number: </P> <br/>
-                 <p>(+62) 123-321-543</P></div>
-               </div>
-             </div>
+              <div class="contact-form">
+                <h3>Your Name</h3>
+               
+                  <input type="text" placeholder="Enter your full name"> 
+                  <h3>Your Email</h3>
+                
+                  <input type="email" placeholder="Enter your Email">
+              
+                  <h3>Subject</h3>
+
+                  <input type="text" placeholder="Enter your subject">                 
+                  <h3>Phone Number</h3>
+                  <input type="tel" placeholder="Enter your phone Number">
+                  <h3>Messege</h3>
+                  <textarea placeholder="Write your messege" rows="5"></textarea>
+                  <button type="submit">Send Message</button>
+              </div>
+          </div>
 
             </section>
             
