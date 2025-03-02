@@ -15,7 +15,7 @@
     body {
       background-color: #f9f9f9;
     }
-
+/* sets the feature of the navigation bar */
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -24,44 +24,46 @@
       background-color: #ffffff;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
-
+/* sets the feature of the hockey logo */
     .logo {
       font-size: 24px;
       font-weight: bold;
     }
-
+/* to set apostrophe color */
     .logo .apostrophe {
       color: red;
     }
+    /* sets the links of the navigation bar such as home, contact, about by this nav-links */
 
     .nav-links {
       display: flex;
       list-style: none;
       gap: 30px;
     }
-
+/* This rule styles the <a> (anchor) elements inside the .nav-links class. */
     .nav-links a {
       text-decoration: none;
       color: #333333;
       font-size: 16px;
     }
-
+/* This selects an <a> tag inside an element with the class .nav-links that also has the class .active. */
     .nav-links a.active {
       color: red;
     }
-
+/* It is typically used in navigation bars (<nav>) to group interactive elements such as:
+Search buttons,User account icons (Login, Profile),CTA buttons like "Get Ticket",Shopping cart icons (if e-commerce related) */
     .nav-actions {
       display: flex;
       align-items: center;
       gap: 20px;
     }
-
+/* used to set the search icon */
     .search-icon {
       font-size: 18px;
       color: #666666;
       cursor: pointer;
     }
-
+/*  to set the button style */
     .ticket-button {
       background-color: red;
       color: white;
@@ -72,11 +74,11 @@
       cursor: pointer;
       transition: background-color 0.3s;
     }
-
+/* It applies when the user hovers over the button with their mouse. */
     .ticket-button:hover {
       background-color: darkred;
     }
-
+/* Defines a container for the slider */
     .carousel {
       position: relative;
       width: 80%;
@@ -85,7 +87,7 @@
       overflow: hidden;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
-
+/* Ensures images fill the container. */
     .carousel img {
       width: 100%;
       display: block;
@@ -150,7 +152,7 @@
       margin-top: 10px;
       color: #666;
     }
-
+/* progress-container class serves as the wrapper for a custom-styled progress bar, providing a structured environment to display progress visually on a webpage. */
     .progress-container {
       display: flex;
       justify-content: center;
@@ -197,11 +199,21 @@
       width: 80%;
       margin: 40px auto;
     }
+    .program-container {
+      display: flex;
+      justify-content: center;
+      padding: 20 px;
+      margin-top: 30px;
+      padding: 10px;
+      
+    }
      .program-card {
       position: relative;
       border-radius: 15px;
       overflow: hidden;
       margin-bottom: 20px;
+     
+      
     }
 
     .program-card img {
@@ -273,6 +285,7 @@
         border-radius: 10px;
         margin: 5px;
     }
+    /* to set the information style */
     .info {
       display: flex;
       flex-direction:column;
@@ -324,7 +337,7 @@
       gap: 30px;
     }
 
-
+/* An accordion in web design is a vertically stacked list of items, such as labels or thumbnails, where each item can be expanded or collapsed to reveal or hide associated content. component:heading, icon, pamels */
     .accordion {
   background-color: #eee;
   color: #444;
@@ -341,7 +354,7 @@
 .active, .accordion:hover {
   background-color: #ccc;
 }
-
+/* the ::after pseudo-element is typically used to append content—such as icons or symbols—after the accordion's header or title.  */
 .accordion:after {
   content: '\002B';
   color: #777;
@@ -354,6 +367,7 @@
   content: "\2212";
 }
 
+/* used to group related content or functionality, enhancing the user interface's organization and clarity. */
 .panel {
   padding: 0 18px;
   background-color: white;
@@ -383,6 +397,7 @@
             background: #fff;
             border-radius: 5px;
         }
+        /* to set the form style  */
         .contact-form {
             width: 65%;
         }
@@ -393,6 +408,8 @@
             border: 1px solid #ccc;
             border-radius: 5px;
         }
+
+        /* to set the submit option by using button style */
         button {
             width: 100%;
             background: red;
@@ -417,7 +434,7 @@
             color: black;
         }
         s.image{
-            width: 20px;
+            width: 150px;
             border-radius: 10px;
             margin: 5px;
 
@@ -437,27 +454,21 @@
         }
         .footer-column {
             max-width: 250px;
-            
         }
         .footer-column h3 {
             margin-bottom: 15px;
             font-size: 18px;
-            
         }
         .footer-column ul {
             list-style: none;
             padding: 0;
-            
-            
         }
         .footer-column ul li {
             margin-bottom: 10px;
-            
-
         }
         .footer-column ul li a {
             text-decoration: none;
-            color: rgba(255, 255, 255, 0.452);
+            color: rgba(255, 255, 255, 0.438);
         }
         .footer-column ul li a:hover {
             text-decoration: underline;
@@ -523,11 +534,13 @@
       </div>
       </section>
       <section class="hockey-club"> 
+        
         <div class="program-sections">
           <h1>Program Section</h1>
           <p>Dit amet consectetur. Condimentum dignissim adipiscing aliquam turpis placerat
             dolor. Purus urna in sit nullam proin.</p>
             </div>
+            <div class="program-container">
           <div class="program-card">
             <img src="jp.jpg" alt="Junior Program">
             <div class="program-content">
@@ -536,6 +549,7 @@
               <button class="register-button">Register Now!</button>
             </div>
           </div>
+          
 
 
           <div class="program-card">
@@ -546,6 +560,7 @@
               <button class="register-button">Register Now!</button>
             </div>
           </div>
+          
           <div class="program-card">
             <img src="pp.JPG" alt="Professional Program">
             <div class="program-content">
