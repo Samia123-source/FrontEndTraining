@@ -1,0 +1,138 @@
+.head{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin: 0px 50px 0px 50px;
+border-bottom: 1px dashed #006600;
+border-top: 1px dashed #006600;
+
+
+}
+.hmain{
+    font-size: 30px;
+    font-weight: 600;
+   
+
+}
+.hsub{
+    padding: 0px 50px 0px 50px;
+    text-align: center;
+  
+}
+.footer{
+    background-color: black;
+    color: white;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 50px 0px 50px;
+}
+.icon{
+    height: 20px;
+    background-color: red;
+}
+.femail{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.femail p{
+    margin-left: 5px;
+}
+.pdes{
+    width: 200px;
+}
+
+.fsides{
+    display: grid;
+    gap: 5px;
+    height: 150px;
+}
+.fhead{
+    color: green;
+    font-size: 20px;
+    font-weight: 600;
+}
+.fsides div:hover{
+    scale: 105%;
+}
+.smedia{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 50px 70px 50px;
+    padding: 10px;
+    background-color: rgb(238, 238, 238);
+
+}
+.sicons{
+    display: flex;
+    flex-direction: row;
+
+
+}
+.sicons img{
+    height: 30px;
+    width: 30px;
+    margin: 10px;
+}
+
+.ttop{
+    width: 300px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+}
+
+.ttop .div1{
+    margin: 10px;
+    background-color: rgb(216, 250, 231);
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+
+
+}
+.ttop .div2{
+    margin: 10px;
+    background-color: rgb(220, 255, 180);
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+
+
+}
+.ttop .div3{
+    margin: 10px;
+    background-color: rgb(202, 236, 255);
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+
+
+}
+.getmain{
+    display: flex;
+    flex-direction: row;
+}
+
+.form1{
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+    gap: 20px;
+    padding: 20px;
+}
+.row{
+    display: flex;
+    flex-direction: column;
+}
+
+.row .col-75 input{
+    background: #e7e7e7;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}

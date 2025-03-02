@@ -1,789 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Navigation Bar</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-
-    body {
-      background-color: #f9f9f9;
-    }
-/* sets the feature of the navigation bar */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 50px;
-      background-color: #ffffff;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-/* sets the feature of the hockey logo */
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-    }
-/* to set apostrophe color */
-    .logo .apostrophe {
-      color: red;
-    }
-    /* sets the links of the navigation bar such as home, contact, about by this nav-links */
-
-    .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 30px;
-    }
-/* This rule styles the <a> (anchor) elements inside the .nav-links class. */
-    .nav-links a {
-      text-decoration: none;
-      color: #333333;
-      font-size: 16px;
-    }
-/* This selects an <a> tag inside an element with the class .nav-links that also has the class .active. */
-    .nav-links a.active {
-      color: red;
-    }
-/* It is typically used in navigation bars (<nav>) to group interactive elements such as:
-Search buttons,User account icons (Login, Profile),CTA buttons like "Get Ticket",Shopping cart icons (if e-commerce related) */
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-/* used to set the search icon */
-    .search-icon {
-      font-size: 18px;
-      color: #666666;
-      cursor: pointer;
-    }
-/*  to set the button style */
-    .ticket-button {
-      background-color: red;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-/* It applies when the user hovers over the button with their mouse. */
-    .ticket-button:hover {
-      background-color: darkred;
-    }
-/* Defines a container for the slider */
-    .carousel {
-      position: relative;
-      width: 80%;
-      margin: 40px auto;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-/* Ensures images fill the container. */
-    .carousel img {
-      width: 100%;
-      display: block;
-    }
-
-    .carousel-content {
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
-      background-color: rgba(0, 0, 0, 0.8);
-      color: white;
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 300px;
-    }
-
-    .carousel-content h2 {
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-
-    .carousel-content p {
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
-    .carousel-controls {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      padding: 0 5px;
-    }
-
-    .carousel-controls button {
-      background: rgba(0, 0, 0, 0.5);
-      border: none;
-      color: white;
-      font-size: 20px;
-      padding: 20px;
-      cursor: pointer;
-      border-radius: 50%;
-    }
-
-    .carousel-controls button:hover {
-      background: rgba(0, 0, 0, 0.8);
-    }
-
-    .hockey-club {
-      text-align: center;
-      padding: 50px;
-    }
-
-    .hockey-club h2 {
-      font-size: 28px;
-      font-weight: bold;
-    }
-
-    .hockey-club p {
-      margin-top: 10px;
-      color: #666;
-    }
-/* progress-container class serves as the wrapper for a custom-styled progress bar, providing a structured environment to display progress visually on a webpage. */
-    .progress-container {
-      display: flex;
-      justify-content: center;
-      gap: 50px;
-      margin-top: 30px;
-    }
-    
-    .progress-item {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .progress-circle {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 20px;
-      position: relative;
-    }
-
-    .progress-red { border: 10px solid red; }
-    .progress-green { border: 10px solid green; }
-    .progress-orange { border: 10px solid orange; }
-    .progress-blue { border: 10px solid blue; }
-   
-
-    .progress-item h3 {
-      margin-top: 10px;
-      font-size: 18px;
-    }
-
-    .progress-item p {
-      color: #666;
-      font-size: 14px;
-    }
-
-    .program-sections {
-      width: 80%;
-      margin: 40px auto;
-    }
-    .program-container {
-      display: flex;
-      justify-content: center;
-      padding: 20 px;
-      margin-top: 30px;
-      padding: 10px;
-      
-    }
-     .program-card {
-      position: relative;
-      border-radius: 15px;
-      overflow: hidden;
-      margin-bottom: 20px;
-     
-      
-    }
-
-    .program-card img {
-      width: 60%;
-      display: block;
-      padding: 20px;
-      border-radius: 10px;
-
-    }
-
-    .program-content {
-      position: absolute;
-      bottom: 20px;
-      left: 10px;
-      text-align: left;
-      background-color: rgba(0, 0, 0, 0.7);
-      color: white;
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 60%;
-    }
-
-    .program-content h3 {
-      font-size:14px;
-      margin-bottom: 10px;
-    }
-
-    .register-button {
-      background-color: red;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 5px;
-      text-align: left;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .register-button:hover {
-      background-color: darkred;
-    }
-
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f8f8f8;
-        text-align: center;
-        padding: 50px;
-       }
-      
-    .container {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction:row;
-        gap: 20px;
-        justify-content: center;
-        padding: 20px;
-    }
-    .card {
-        background: white;
-        display: flex;
-        flex-direction:row;
-        text-align: center;
-        font-size: 15px;
-    }
-  
-    .card img {
-        width: 150px;
-        border-radius: 10px;
-        margin: 5px;
-    }
-    /* to set the information style */
-    .info {
-      display: flex;
-      flex-direction:column;
-      justify-content: start;
-      padding: 10px 0;
-      align-items: start;
-    }
-    .price {
-        color: red;
-        font-weight: bold;
-    }
-
-    .faq-container{
-      
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction:row;
-        gap: 10px;
-        justify-content: center;
-        padding: 10px;
-        }
-
-     .faq-card{
-
-      background: white;
-        display: flex;
-        flex-direction:row;
-        text-align: center;
-        font-size: 20px;
-
-
-        }
-    .faq-image {
-        width: 50;
-       
-        border-radius: 10px;
-        margin: 10px;
-
-      
-    }
-    .info{
-         text-align: left;
-         font-size: 15px ;
-
-    }
-    .links{
-      display: internal;
-      list-style: none;
-      gap: 30px;
-    }
-
-/* An accordion in web design is a vertically stacked list of items, such as labels or thumbnails, where each item can be expanded or collapsed to reveal or hide associated content. component:heading, icon, pamels */
-    .accordion {
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-  transition: 0.4s;
-}
-
-.active, .accordion:hover {
-  background-color: #ccc;
-}
-/* the ::after pseudo-element is typically used to append content—such as icons or symbols—after the accordion's header or title.  */
-.accordion:after {
-  content: '\002B';
-  color: #777;
-  font-weight: bold;
-  float: right;
-  margin-left: 5px;
-}
-
-.active:after {
-  content: "\2212";
-}
-
-/* used to group related content or functionality, enhancing the user interface's organization and clarity. */
-.panel {
-  padding: 0 18px;
-  background-color: white;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-}
-.contact-container {
-            max-width: 800px;
-            width: 100%;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: flex;
-            gap: 20px;
-        }
-     .contact-info {
-            width: 35%;
-            padding: 20px;
-            background: #f2f2f2;
-            border-radius: 10px;
-        }
-        .contact-info div {
-            margin-bottom: 15px;
-            padding: 10px;
-            background: #fff;
-            border-radius: 5px;
-        }
-        /* to set the form style  */
-        .contact-form {
-            width: 65%;
-        }
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 5px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        /* to set the submit option by using button style */
-        button {
-            width: 100%;
-            background: red;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background: darkred;
-        }
-
-        .social-media {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .social-media a {
-            margin: 0 10px;
-            text-decoration: none;
-            font-size: 24px;
-            color: black;
-        }
-        s.image{
-            width: 150px;
-            border-radius: 10px;
-            margin: 5px;
-
-       }
-        .social-media a:hover {
-            color: gray;
-        }
-        .footer {
-            width: 100%;
-            background: #111;
-            color: white;
-            text-align: left;
-            padding: 40px 0;
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-        .footer-column {
-            max-width: 250px;
-        }
-        .footer-column h3 {
-            margin-bottom: 15px;
-            font-size: 18px;
-        }
-        .footer-column ul {
-            list-style: none;
-            padding: 0;
-        }
-        .footer-column ul li {
-            margin-bottom: 10px;
-        }
-        .footer-column ul li a {
-            text-decoration: none;
-            color: rgba(255, 255, 255, 0.438);
-        }
-        .footer-column ul li a:hover {
-            text-decoration: underline;
-        }
-
-   </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
+
 <body>
-
-  <nav class="navbar">
-    <div class="logo">Hockey<span class="apostrophe">'</span>s</div>
-    <ul class="nav-links">
-      <li><a href="#" class="active">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Pages</a></li>
-      <li><a href="#">Blog</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-    <div class="nav-actions">
-      <div class="search-icon">&#128269;</div>
-      <button class="ticket-button">Get Ticket</button>
-    </div>
-  </nav>
-  <div class="carousel">
-    <!-- this image tag add's image from the internet  -->
-    <img id="carouselImage" src="https://static8.depositphotos.com/1012223/980/i/450/depositphotos_9803930-stock-photo-demo-cubes.jpg" alt="Trophy Image">
-    <!-- this adds the image from the pc . here i saved the image on the root location  .where this code file is saved . that's why i needed to add the image name only to perse it properly and directly  -->
-    
-    <div class="carousel-content">
-        <h2>Meet all the heroes from the field</h2>
-        <p>Dit amet consectetur. Condimentum dignissim adipiscing aliquam turpis placerat dolor. Purus urna in sit nullam proin.</p>
-      </div>
-      <div class="carousel-controls">
-        <button>&#9664;</button>
-        <button>&#9654;</button>
-      </div>
-    </div>
-  
-    <section class="hockey-club">
-    <h2>Professional Hockeys Club</h2>
-    <p>Dit amet consectetur. Condimentum dignissim adipiscing aliquam turpis placerat dolor. Purus urna in sit nullam proin.</p>
-    <div class="progress-container">
-      <div class="progress-item">
-        <div class="progress-circle progress-red">87%</div>
-        <h3>Prayer Facility</h3>
-        <p>Amet consectetur. Condimentum dignissim adipiscing.</p>
-      </div>
-      <div class="progress-item">
-        <div class="progress-circle progress-green">95%</div>
-        <h3>Experienced Coach</h3>
-        <p>Amet consectetur. Condimentum dignissim adipiscing.</p>
-      </div>
-      <div class="progress-item">
-        <div class="progress-circle progress-orange">90%</div>
-        <h3>Senior Player</h3>
-        <p>Amet consectetur. Condimentum dignissim adipiscing.</p>
-      </div>
-      <div class="progress-item">
-        <div class="progress-circle progress-blue">80%</div>
-        <h3>Training Ground</h3>
-        <p>Amet consectetur. Condimentum dignissim adipiscing.</p>
-      </div>
-      </div>
-      </section>
-      <section class="hockey-club"> 
-        
-        <div class="program-sections">
-          <h1>Program Section</h1>
-          <p>Dit amet consectetur. Condimentum dignissim adipiscing aliquam turpis placerat
-            dolor. Purus urna in sit nullam proin.</p>
-            </div>
-            <div class="program-container">
-          <div class="program-card">
-            <img src="jp.jpg" alt="Junior Program">
-            <div class="program-content">
-              <h3>Junior Program</h3>
-              <p>Dolor sit amet consectetur. Ur urna diam quis sagittis...</p>
-              <button class="register-button">Register Now!</button>
-            </div>
-          </div>
-          
-
-
-          <div class="program-card">
-            <img src="tp.jpg" alt="Teenager Program">
-            <div class="program-content">
-              <h3>Teenager Program</h3>
-              <p>Dolor sit amet consectetur. Ur urna diam quis sagittis...</p>
-              <button class="register-button">Register Now!</button>
-            </div>
-          </div>
-          
-          <div class="program-card">
-            <img src="pp.JPG" alt="Professional Program">
-            <div class="program-content">
-              <h3>Professional Program</h3>
-              <p>Dolor sit amet consectetur. Ur urna diam quis sagittis...</p>
-              <button class="register-button">Register Now!</button>
-            </div>
-          </div>
-         </div>
-  </section>
-  <section class="New Product">
-    <div class="New Product"></div>
-    <h2>Our New Products</h2>
-    <p>Dit amet consectetur. Condimentum dignissim adipiscing aliquam turpis placerat
-      dolor. Purus urna in sit nullam proin.</p>
-    </div>
-    <div class="container">
-      <div class="card">
-        <img src="jacket.png" alt="Jacket">
-        <div class="info">
-          <h3>World Cup flags football</h3>
-          <p>Dolor sit amet consectetur. Ut urna diam
-            quis sagittis.</p>
-            <p>Delivery Fee:Free</p>
+    <section>header section </section>
+    <section>
+        <div class="head">
+            <p class="hmain">Professional Hockey Club </p>
+            <p class="hsub ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat laboriosam ipsam
+                dignissimos praesentium deleniti nostrum maiores dolorum sint laborum est temporibus velit et natus
+                quis, obcaecati, magnam in consequatur dolorem!</p>
         </div>
-      </div>
-      <div class="card">
-        <img src="soccer ball.png" alt="Soccer ball">
-        <div class="info">
-          <h3>World Cup Flags Footballl</h3>
-          <p>Dolor sit amet consectetur. Ut urna diam
-            quis sagittis.</p>
-            <p>Delivery Fee:Free</p>
+    </section>
+    <section>
+        <div class="head">
+            <p class="hmain">Program Section</p>
+            <p class="hsub ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat laboriosam ipsam
+                dignissimos praesentium deleniti nostrum maiores dolorum sint laborum est temporibus velit et natus
+                quis, obcaecati, magnam in consequatur dolorem!</p>
         </div>
-      </div>
-        <div class="card">
-          <img src="cap.png" alt="Jacket">
-          <div class="info">
-            <h3>Cap For Hockeys</h3>
-            <p>Dolor sit amet consectetur. Ut urna diam
-              quis sagittis.</p>
-              <p>Delivery Fee:Free</p>
-          </div>
-          </div>
-          
-          <div class="card">
-            <img src="T-shirt.png" alt="T-shirt">
-            <div class="info">
-              <h3>World Cup flags football</h3>
-              <p>Dolor sit amet consectetur. Ut urna diam
-                quis sagittis.</p>
-                <p>Delivery Fee:Free</p>
+    </section>
+    <section>
+        <div class="head">
+            <p class="hmain">Our New Products</p>
+            <p class="hsub ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat laboriosam ipsam
+                dignissimos praesentium deleniti nostrum maiores dolorum sint laborum est temporibus velit et natus
+                quis, obcaecati, magnam in consequatur dolorem!</p>
+        </div>
+    </section>
+    <section>
+        <div class="head">
+            <p class="hmain">Clients Question </p>
+            <p class="hsub ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat laboriosam ipsam
+                dignissimos praesentium deleniti nostrum maiores dolorum sint laborum est temporibus velit et natus
+                quis, obcaecati, magnam in consequatur dolorem!</p>
+        </div>
+    </section>
+    <section>
+        <div class="head">
+            <p class="hmain">Get In Touch</p>
+            <p class="hsub ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat laboriosam ipsam
+                dignissimos praesentium deleniti nostrum maiores dolorum sint laborum est temporibus velit et natus
+                quis, obcaecati, magnam in consequatur dolorem!</p>
+        </div>
+        <div>
+            <div class="getmain">
+            <div class="ttop"><div class="div1"><img src="/images/p.png" alt=""><p>Contact Number:</p>
+            <p>+8801682508906</p></div>
+            <div class="div2"><img src="/images/p.png" alt=""><p>Contact Number:</p>
+                <p>+8801682508906</p></div>
+                <div class="div3"><img src="/images/p.png" alt=""><p>Contact Number:</p>
+                    <p>+8801682508906</p></div>
+        </div>
+            <div>
+                <div class="form1">
+                <div class="row">
+                    <div class="col-25">
+                      <label for="fname">First Name</label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="fname">First Name</label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                    </div>
+                  </div>
             </div>
-          </div>
-          <div class="card">
-            <img src="football helmet.png" alt="Football helmet">
-            <div class="info">
-              <h3>World Cup flags football</h3>
-              <p>Dolor sit amet consectetur. Ut urna diam
-                quis sagittis.</p>
-                <p>Delivery Fee:Free</p>
+            <div class="form1">
+                <div class="row">
+                    <div class="col-25">
+                      <label for="fname">First Name</label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="fname">First Name</label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                    </div>
+                  </div>
             </div>
-          </div>
-          <div class="card">
-            <img src="football.png" alt="Football">
-            <div class="info">
-              <h3>World Cup flags football</h3>
-              <p>Dolor sit amet consectetur. Ut urna diam
-                quis sagittis.</p>
-                <p>Delivery Fee:Free</p>
+            <div class="form1">
+            <div class="row">
+                <div class="col-25">
+                  <label for="fname">First Name</label>
+                </div>
+                <div class="col-75">
+                    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px ; background-color: red;">sasads</textarea>                </div>
+              </div>
             </div>
-          </div>
-
-
+        </div>
+        </div>
+        <div class="smedia">
+            <div class="hmain">Social Media </div>
+            <div class="sicons"><img src="https://cdn-icons-png.flaticon.com/512/152/152810.png" alt=""><img src="https://img.icons8.com/ios_filled/512/facebook-new.png" alt=""><img src="https://cdn-icons-png.flaticon.com/512/1384/1384031.png" alt=""><img src="https://cdn-icons-png.flaticon.com/512/1384/1384017.png" alt=""></div>
+        </div></div>
+    </section>
+    <section class="footer">
+        <div>
+            <div class="hmain">Get in Touch </div>
+            <div class="pdes">prottoy and samia loves each other very much , they can not live with out each other for a moment right
+                now </div>
+            <div class="femail"> <img class="icon" src="/images/email.png" alt="">
+                <p> www.hokey@support.com</p>
+            </div>
+            <div class="femail"> <img class="icon" src="/images/email.png" alt="">
+                <p> +8801682508906</p>
+            </div>
+        </div>
+        <div class="fsides"><div class="fhead">Company</div>
+        <div>About us </div>
+        <div>Career </div>
+        <div>News & Article  </div>
+        <div>Legal Notice</div>
     </div>
-
-  </section>
-   <section>
-        <h2>Clients Question</h2>
-        <p>Dit amet consectetur. Condimentum dignissim adipiscing aliquam turpis placerat dolor. Purus urna in sit nullam proin.</p>
-   </section>
-
-   <section class="faq-section">
-         <div class="container">
-          <div class="faq-card">
-            <div class="faq-image">
-                <img src="question icon.png" alt="Question Icon">
-            </div>
-            <div class="info">
-              <h3>Our Equipment</h3>
-              <p>Dolor sit amet consectetur. Ut urna diam quis sagittis. Elit elit enim
-                sagittis turpis in magna.</p>
-               
-                <button class="accordion">HockeyTraining</button>
-                <div class="panel">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
-                
-                <button class="accordion">Private lessons</button>
-                <div class="panel">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
-                
-                <button class="accordion">Sky Touring</button>
-                <div class="panel">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
-                <button class="accordion">Booking</button>
-                <div class="panel">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
-
-                <button class="accordion">Pricings</button>
-                <div class="panel">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
-
-            </div>
-            
-          </section>
-  
-          <script>
-            var acc = document.getElementsByClassName("accordion");
-            var i;
-            
-            for (i = 0; i < acc.length; i++) {
-              acc[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var panel = this.nextElementSibling;
-                if (panel.style.maxHeight) {
-                  panel.style.maxHeight = null;
-                } else {
-                  panel.style.maxHeight = panel.scrollHeight + "px";
-                } 
-              });
-            }
-            </script>
-
-            <section>
-              <h2>Get In Touch</h2>
-              <p> Dit amet consectetur. Condimentum dignissim adipiscing aliquam turpis placerat
-                dolor. Purus urna in sit nullam proin.</p>
-              </section>
-             <div class="contact-container">
-              <div class="contact-info"></div>
-              <div class="card">
-                  <div><strong>Phone Number:</strong> (+62) 123-321-543</div></div>
-                  <div class="card">                
-                  <div><strong>Email:</strong> hockeys@support.com</div></div>
-                  <div class="card">  
-                  <div><strong>Location:</strong> 152/1 Mohakhali Wireless Gate</div>
-              </div>
-              <div class="contact-form">
-                <h3>Your Name</h3>
-               
-                  <input type="text" placeholder="Enter your full name"> 
-                  <h3>Your Email</h3>
-                
-                  <input type="email" placeholder="Enter your Email">
-              
-                  <h3>Subject</h3>
-
-                  <input type="text" placeholder="Enter your subject">                 
-                  <h3>Phone Number</h3>
-                  <input type="tel" placeholder="Enter your phone Number">
-                  <h3>Messege</h3>
-                  <textarea placeholder="Write your messege" rows="5"></textarea>
-                  <button type="submit">Send Message</button>
-              </div>
-          </div>
-
-            </section>
-            <div class="social-media">
-              <h3>Social Media</h3>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <div class="s.image"><img src="twitter.png" alt="Twitter"></div>
-              <a href="#"><i class="fab fa-facebook"></i></a>
-              <div class="s.image"></div><img src="facebook.png" alt="Facebook"></div>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <div class="s.image"></div><img src="instagram.png" alt="Instagram"></div>
-              <a href="#"><i class="fab fa-github"></i></a>
-              <div class="s.image"></div><img src="github-sign.png" alt="Github"></div>
-          </div>
-          <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-          <footer class="footer">
-            <div class="footer-column">
-                <h3>Get In Touch</h3>
-                <p>Dit amet consectetur. Condimentum adipiscing aliquam turpis placerat dolor. Purus urna in sit nullam proin.</p>
-                <p>📧 hockeys@support.com</p>
-                <p>📞 (+62) 123-321-543</p>
-            </div>
-            <div class="footer-column">
-                <h3>Company</h3>
-                <ul>
-                    <li><a href="#">About us</a></li>
-                    <li><a href="#">Leadership</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">News & Article</a></li>
-                    <li><a href="#">Legal Notice</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Support</h3>
-                <ul>
-                    <li><a href="#">Help Center</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Ticket Support</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Services</h3>
-                <ul>
-                    <li><a href="#">Academy</a></li>
-                    <li><a href="#">Group Lesson</a></li>
-                    <li><a href="#">Private Lesson</a></li>
-                    <li><a href="#">Hockeys for kids</a></li>
-                    <li><a href="#">Hockeys for Adult</a></li>
-                </ul>
-            </div>
-        </footer>
+    <div class="fsides"><div class="fhead">Support</div>
+    <div>About us </div>
+    <div>Career </div>
+    <div>News & Article  </div>
+    <div>Legal Notice</div>
+</div>
+<div class="fsides"><div class="fhead">Service </div>
+<div>About us </div>
+<div>Career </div>
+<div>News & Article  </div>
+<div>Legal Notice</div>
+</div>
+    </section>
 </body>
+
 </html>
-
-
-
